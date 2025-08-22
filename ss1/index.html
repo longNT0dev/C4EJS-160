@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <!-- Import link, thư viện -->
+    <!-- Internal CSS -->
+    <!-- <style>
+      /* Selector: Bộ chọn */
+      /* C1: Tên thẻ */
+      h1 {
+        color: blue;
+        font-size: 32px;
+        border: 1px solid black;
+      }  
+      /* C2: Tên class */
+      .box {
+        width: 100px;
+        height: 100px;
+        border: 1px solid red;
+        border-radius: 50%;
+      }
+      /* C3: Tên Id */
+      #container {
+        background-color: #a3a356;
+        color: white;
+      }
+
+      .box-1 {
+        color: saddlebrown;
+      }
+    </style> -->
+
+    <style>
+      /* #A {
+        color: blue;
+      } */
+
+      /* .B {
+        color: green;
+      }
+
+      p {
+        color: red;
+      } */
+
+      .A {
+        color: blue!important;
+      }
+
+      .B {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Inline Style có độ ưu tiên cao nhất -->
+    <!-- Ưu tiên theo Id sau đó đến Class và cuối cùng là tên thẻ -->
+    <!-- Nếu cùng độ ưu tiên thì sẽ ưu tiên thứ tự xuất hiện cuối cùng trong trong code  -->
+    <!-- <p style="color: blue;">Đây là ví dụ về độ ưu tiên 1</p> -->
+    <!-- <p id="A" class="B">Đây là ví dụ về độ ưu tiên 2</p> -->
+    <p class="A B" style="color: red!important;">Đây là ví dụ về độ ưu tiên 3</p>
+
+    <!-- <p style="color: red; font-size: 32px">
+      Xin chào các bạn đến với khóa C4EJS160
+    </p>
+
+    <h1>Đây là thẻ h1</h1>
+    <h1>Đây là thẻ h1</h1> -->
+
+    <!-- Một thẻ chỉ được quyền có 1 Id duy nhất -->
+    <!-- <div id="container">
+        Đây là thẻ div 1
+    </div> -->
+
+    <!-- Một thẻ có thể có nhiều class -->
+    <!-- <div class="box box-1 box-2">
+        Đây là thẻ div 2
+    </div>
+
+    <div class="box">Đây là thẻ div 3</div> -->
+
+    <!-- <a href=""></a> -->
+  </body>
+</html>
