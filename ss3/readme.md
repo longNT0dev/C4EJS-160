@@ -1,0 +1,1 @@
+1. Làm 1 thanh navbar (thanh điều hướng), yêu cầu khi thu nhỏ, phóng to màn hình thì nút search ở trên thanh tìm kiếm vẫn nằm đúng vị trí

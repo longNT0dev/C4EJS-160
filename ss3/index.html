@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+      }
+
+      body {
+        /* padding: 50px; */
+        height: 2000px;
+      }
+
+      p {
+        /* border: (Độ dày viền) (Kiểu viền) (Màu viền); */
+        border: 1px solid red;
+        /* padding-top: 8px;
+            padding-bottom: 8px;
+            padding-left: 8px;
+            padding-right: 8px; */
+        /* padding: 8px 16px 24px 32px; */
+        width: 150px;
+        height: 150px;
+
+        /* position */
+        /* position: absolute;
+            top: 120px;
+            left: 30px; */
+      }
+
+      .container {
+        border: 1px solid black;
+        width: 500px;
+        height: 500px;
+      }
+
+      .p1 {
+        /* Dịch chuyển thẻ html đi 1 đoạn so với vị trí ban đầu */
+        /* Khi bị dịch chuyển, relative vẫn chiếm không gian như bình thường */
+        /* position: relative;  */
+        /* Dịch chuyển thẻ html đi 1 đoạn so với vị trí của thẻ cha */
+        /* Thẻ cha phải thỏa mãn 2 điều kiện 
+            1. Thẻ cha phải chứa thẻ con
+            2. Thẻ cha phải có position là relative hoặc absolute 
+        Nếu không có thẻ cha mặc định nhận vị trí của thẻ body làm mốc */
+        /* Khi dịch chuyển, absolute không chiếm không gian nữa */
+        position: absolute;
+        top: 120px;
+        left: 30px;
+      }
+
+      .p2 {
+        /* position: absolute;
+            top: 120px;
+            left: 30px; */
+      }
+
+      .item {
+        width: 100px;
+        height: 100px;
+      }
+
+      .item-1 {
+        background-color: red;
+      }
+
+      .item-2 {
+        background-color: blue;
+        position: relative;
+        bottom: 50px;
+        z-index: -1;
+      }
+
+      .item-3 {
+        background-color: green;
+      }
+
+      nav {
+        width: 100%;
+        height: 50px;
+        background-color: red;
+        position: fixed;
+        top: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div class="container"> -->
+    <!-- <p class="p1">Đây là thẻ p1</p> -->
+    <!-- <p class="p2">Đây là thẻ p2</p> -->
+    <!-- </div> -->
+
+    <!-- <div class="item item-1"></div>
+    <div class="item item-2"></div> -->
+    <!-- <div class="item item-3"></div> -->
+
+    <nav>Đây là thanh nav</nav>
+  </body>
+</html>
