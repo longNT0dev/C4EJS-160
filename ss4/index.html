@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.3.0/css/flat-ui.min.css"
+      integrity="sha512-6f7HT84a/AplPkpSRSKWqbseRTG4aRrhadjZezYQ0oVk/B+nm/US5KzQkyyOyh0Mn9cyDdChRdS9qaxJRHayww=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      /* .div1 {
+        display: inline-block;
+      }
+
+      .div2 {
+        display: inline-block;
+      }
+
+      span {
+        display: inline-block;
+        width: 400px;
+      } */
+
+      .container {
+        /* border: 1px solid black;  */
+        display: flex;
+        width: 600px;
+        height: 400px;
+        background-color: lightblue;
+        /* Điều khiển các phần tử con theo trục chính (main axis) */
+        /* justify-content: value */
+        /* start
+            center
+            end
+            space-between
+            space-around
+            space-evenly */
+        /* Điều khiển các phần tử con theo trục phụ (cross axis); */
+        /* align-items: value; */
+        /* start
+            center
+            end */
+
+        /* flex-direction: column; */
+
+        /* Các phần tử con sẽ tự động xuống dòng khi không đủ chỗ */
+        /* flex-wrap: wrap; */
+      }
+
+      .item {
+        width: 200px;
+        height: 50px;
+      }
+
+      .item-1 {
+        background-color: red;
+        /* Phần tử con sẽ tự giãn ra để chiếm dụng phần không gian còn lại của container */
+        /* flex-grow: 2; */
+        /* Phần tử con sẽ tự co ra để vừa với container */
+        flex-shrink: 2;
+        /* Set chiều rộng hoặc chiều dài của phần tử con phụ thuộc vào trục chính (flex-direction) */
+        /* flex-basis: 200px; */
+        /* order => Sắp xếp lại thứ tự các phần tử con */
+        /* align-self => Thay đổi vị trí của 1 phần tử con  */
+      }
+
+      .item-2 {
+        background-color: yellow;
+        flex-shrink: 1;
+      }
+
+      .item-3 {
+        background-color: green;
+        flex-shrink: 1;
+      }
+
+      .item-4 {
+        background-color: orange;
+        flex-shrink: 1;
+      }
+
+      /* .hidden {
+        display: none;
+        visibility: hidden;
+      } */
+
+      .grid-parent {
+        width: 900px;
+        display: grid;
+        /* Khai báo số lượng cột của grid */
+        grid-template-columns: auto auto auto;
+        /* Khai báo số lượng hàng của grid */
+        grid-template-rows: 100px 100px;
+        grid-column-gap: 12px;
+        grid-row-gap: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- display: grid => Biết trước số lượng hàng cột trên màn hình -->
+    <div class="grid-parent">
+      <div class="item-1">1</div>
+      <div class="item-2">2</div>
+      <div class="item-3">3</div>
+      <div class="item-3">4</div>
+    </div>
+
+    <!-- <div class="hidden">Đây là thẻ div bị ẩn</div> -->
+
+    <!-- display: block => Luôn chiếm hết 1 hàng không kể chiều dài nội dung, các thẻ block không nằm cùng hàng với nhau -->
+    <!-- <div class="div1">Đây là thẻ div 1</div>
+    <div class="div2">Đây là thẻ div 2</div> -->
+
+    <!-- display: inline => Chiều rộng của thẻ thì đúng bằng nội dung, các thẻ inline có thể nằm cùng hàng nhưng không thể 
+    thay đổi width height  -->
+    <!-- <span>Đây là thẻ span 1</span>
+    <span>Đây là thẻ span 2</span> -->
+
+    <!-- display: inline-block => Vừa có tính chất của block và inline, có thể thay đổi width height và có thể nằm cùng hàng -->
+
+    <!-- display: flex -->
+    <div class="container">
+      <div class="item item-1">1</div>
+      <div class="item item-2">2</div>
+      <div class="item item-3">3</div>
+      <div class="item item-4">4</div>
+      <!-- <h3>C</h3>
+      <h3>C4E</h3>
+      <h3>Documentation Portal</h3>
+      <input type="text" placeholder="Search..." /> -->
+    </div>
+
+    <!-- display: grid    -->
+  </body>
+</html>
