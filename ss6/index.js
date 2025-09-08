@@ -138,6 +138,5 @@ console.log("Hello World!")
 // console.log(false || true)
 // console.log(false || false)
 
-TypeScript:
+// TypeScript:
 // Từ khóa khai báo biến + Tên biến: Kiểu dữ liệu biến = Giá trị của biến
-let a = 5
