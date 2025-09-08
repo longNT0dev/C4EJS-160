@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fox – Education Landing (Tailwind)</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind (CDN build for quick start) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'] },
+            colors: {
+              primary: {
+                50: '#fff3f0', 100: '#ffe4dd', 200: '#ffc4b8', 300: '#ffa18f',
+                400: '#ff7d66', 500: '#ff5a3c', 600: '#e64c31', 700: '#c13f29',
+                800: '#a13424', 900: '#7a281b', 950: '#4a160f'
+              }
+            },
+            boxShadow: {
+              soft: '0 10px 30px rgba(0,0,0,0.08)'
+            }
+          }
+        }
+      }
+    </script>
+
+    <style>
+      /* Smooth scrolling for anchor links */
+      html { scroll-behavior: smooth; }
+      /* Hide native scrollbar for horizontal carousels */
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+  </head>
+
+  <body class="text-slate-700 antialiased bg-white">
+    <!-- ================= NAVBAR ================= -->
+    <header class="fixed top-0 inset-x-0 z-50 bg-white/90 backdrop-blur border-b border-slate-100">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex h-16 items-center justify-between">
+          <!-- Brand -->
+          <a href="#home" class="flex items-center gap-2 group">
+            <span class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-primary-500 text-white font-bold">F</span>
+            <span class="text-xl font-extrabold tracking-tight group-hover:text-primary-600 transition">Fox</span>
+          </a>
+
+          <!-- Desktop Nav -->
+          <nav class="hidden md:flex items-center gap-8 text-[15px]">
+            <a href="#home" class="hover:text-primary-600">Trang chủ</a>
+            <a href="#about" class="hover:text-primary-600">Giới thiệu</a>
+            <a href="#courses" class="hover:text-primary-600">Khoá học</a>
+            <a href="#events" class="hover:text-primary-600">Sự kiện</a>
+            <a href="#teachers" class="hover:text-primary-600">Giảng viên</a>
+            <a href="#contact" class="hover:text-primary-600">Liên hệ</a>
+          </nav>
+
+          <!-- Actions -->
+          <div class="hidden md:flex items-center gap-3">
+            <a href="#" class="px-4 py-2 rounded-lg border border-slate-200 hover:border-primary-500 hover:text-primary-600 transition">Đăng nhập</a>
+            <a href="#" class="px-4 py-2 rounded-lg bg-primary-500 text-white hover:bg-primary-600 transition">Đăng ký</a>
+          </div>
+
+          <!-- Mobile toggle -->
+          <button id="menuBtn" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-slate-200">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobileMenu" class="md:hidden hidden border-t border-slate-100 bg-white">
+        <nav class="px-4 pt-2 pb-4 space-y-1">
+          <a href="#home" class="block px-3 py-2 rounded-lg hover:bg-slate-50">Trang chủ</a>
+          <a href="#about" class="block px-3 py-2 rounded-lg hover:bg-slate-50">Giới thiệu</a>
+          <a href="#courses" class="block px-3 py-2 rounded-lg hover:bg-slate-50">Khoá học</a>
+          <a href="#events" class="block px-3 py-2 rounded-lg hover:bg-slate-50">Sự kiện</a>
+          <a href="#teachers" class="block px-3 py-2 rounded-lg hover:bg-slate-50">Giảng viên</a>
+          <a href="#contact" class="block px-3 py-2 rounded-lg hover:bg-slate-50">Liên hệ</a>
+          <div class="flex gap-2 pt-2">
+            <a href="#" class="flex-1 text-center px-4 py-2 rounded-lg border border-slate-200">Đăng nhập</a>
+            <a href="#" class="flex-1 text-center px-4 py-2 rounded-lg bg-primary-500 text-white">Đăng ký</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- ================= HERO ================= -->
+    <section id="home" class="relative pt-28 lg:pt-32">
+      <div class="absolute inset-0 -z-10">
+        <img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?q=80&w=1940&auto=format&fit=crop" alt="Students learning" class="w-full h-full object-cover"/>
+        <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-white"></div>
+      </div>
+
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-12 gap-10 items-center py-16 lg:py-24">
+          <div class="lg:col-span-7 text-white">
+            <p class="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-sm backdrop-blur">
+              <span class="inline-block h-2 w-2 rounded-full bg-emerald-400"></span>
+              Tuyển sinh khoá 10 – Ưu đãi 25%
+            </p>
+            <h1 class="mt-5 text-4xl md:text-5xl font-extrabold leading-tight">
+              Nâng tầm kỹ năng với <span class="text-primary-300">Fox Academy</span>
+            </h1>
+            <p class="mt-4 text-lg text-slate-100/90 max-w-2xl">Học các kỹ năng thực chiến từ chuyên gia: Lập trình, Thiết kế, Marketing và hơn thế nữa.</p>
+            <div class="mt-8 flex flex-col sm:flex-row gap-3">
+              <a href="#courses" class="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-primary-500 hover:bg-primary-600 text-white font-medium shadow-soft">
+                Khám phá khoá học
+              </a>
+              <a href="#about" class="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-medium ring-1 ring-white/30">
+                Tìm hiểu thêm
+              </a>
+            </div>
+            <div class="mt-8 grid grid-cols-3 gap-6 max-w-xl">
+              <div class="rounded-xl bg-white/90 text-slate-800 p-4"><p class="text-2xl font-extrabold">120+</p><p class="text-sm">Khoá học</p></div>
+              <div class="rounded-xl bg-white/90 text-slate-800 p-4"><p class="text-2xl font-extrabold">50K+</p><p class="text-sm">Học viên</p></div>
+              <div class="rounded-xl bg-white/90 text-slate-800 p-4"><p class="text-2xl font-extrabold">4.8/5</p><p class="text-sm">Đánh giá</p></div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5">
+            <form class="rounded-2xl bg-white p-6 shadow-soft">
+              <h3 class="text-xl font-bold">Tìm khoá học phù hợp</h3>
+              <p class="text-sm text-slate-500 mt-1">Chọn lĩnh vực bạn quan tâm</p>
+              <div class="mt-5 grid gap-4">
+                <div>
+                  <label class="text-sm font-medium">Từ khoá</label>
+                  <input type="text" placeholder="Ví dụ: React, SEO..." class="mt-1 w-full rounded-lg border-slate-200 focus:border-primary-500 focus:ring-primary-500"/>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label class="text-sm font-medium">Danh mục</label>
+                    <select class="mt-1 w-full rounded-lg border-slate-200 focus:border-primary-500 focus:ring-primary-500">
+                      <option>Lập trình</option>
+                      <option>Thiết kế</option>
+                      <option>Marketing</option>
+                      <option>Kinh doanh</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="text-sm font-medium">Cấp độ</label>
+                    <select class="mt-1 w-full rounded-lg border-slate-200 focus:border-primary-500 focus:ring-primary-500">
+                      <option>Mới bắt đầu</option>
+                      <option>Trung cấp</option>
+                      <option>Nâng cao</option>
+                    </select>
+                  </div>
+                </div>
+                <button class="mt-2 inline-flex items-center justify-center rounded-lg bg-primary-500 px-5 py-3 font-medium text-white hover:bg-primary-600">Tìm kiếm</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FEATURES ================= -->
+    <section class="py-16 lg:py-20">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="p-6 rounded-2xl border border-slate-100 shadow-soft">
+            <div class="h-12 w-12 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center mb-4">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.276A2 2 0 0122 9.528V17a2 2 0 01-2 2h-5m-4-9L4.447 7.724A2 2 0 002 9.528V17a2 2 0 002 2h5m2-9v10"/></svg>
+            </div>
+            <h3 class="text-lg font-bold">Giảng viên chất lượng</h3>
+            <p class="mt-2 text-slate-500">Chuyên gia đầu ngành với kinh nghiệm thực chiến, theo sát từng học viên.</p>
+          </div>
+          <div class="p-6 rounded-2xl border border-slate-100 shadow-soft">
+            <div class="h-12 w-12 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center mb-4">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7h8M8 11h8m-8 4h5M5 21h14a2 2 0 002-2V5a2 2 0 00-2-2H9l-4 4v12a2 2 0 002 2z"/></svg>
+            </div>
+            <h3 class="text-lg font-bold">Chương trình cập nhật</h3>
+            <p class="mt-2 text-slate-500">Nội dung học tập bám sát xu hướng công nghệ & nhu cầu doanh nghiệp.</p>
+          </div>
+          <div class="p-6 rounded-2xl border border-slate-100 shadow-soft">
+            <div class="h-12 w-12 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center mb-4">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a6 6 0 1112 0H6z"/></svg>
+            </div>
+            <h3 class="text-lg font-bold">Việc làm sau tốt nghiệp</h3>
+            <p class="mt-2 text-slate-500">Kết nối doanh nghiệp & hỗ trợ săn job với hồ sơ nổi bật.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+    <section id="about" class="py-16 lg:py-24 bg-slate-50">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-10 items-center">
+        <div class="lg:col-span-6">
+          <div class="relative">
+            <img class="rounded-2xl w-full object-cover" src="https://images.unsplash.com/photo-1523580846011-1c0f8f6c17e4?q=80&w=1880&auto=format&fit=crop" alt="Classroom"/>
+            <div class="absolute -bottom-6 -left-6 bg-white p-5 rounded-2xl shadow-soft">
+              <p class="text-3xl font-extrabold text-primary-600">10+</p>
+              <p class="text-sm text-slate-500">Năm kinh nghiệm đào tạo</p>
+            </div>
+          </div>
+        </div>
+        <div class="lg:col-span-6">
+          <p class="text-primary-600 font-semibold">Về chúng tôi</p>
+          <h2 class="mt-2 text-3xl md:text-4xl font-extrabold tracking-tight">Học tập hiện đại, thực tế và hiệu quả</h2>
+          <p class="mt-4 text-slate-600">Fox Academy xây dựng lộ trình bài bản, kết hợp dự án thực tế và mentor đồng hành. Từ con số 0 đến chinh phục công việc mơ ước.</p>
+          <ul class="mt-6 space-y-3">
+            <li class="flex items-start gap-3"><span class="mt-1 h-5 w-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center">✓</span> Giáo trình bám sát thị trường</li>
+            <li class="flex items-start gap-3"><span class="mt-1 h-5 w-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center">✓</span> Bài tập & dự án thực chiến</li>
+            <li class="flex items-start gap-3"><span class="mt-1 h-5 w-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center">✓</span> Hỗ trợ CV, phỏng vấn, kết nối doanh nghiệp</li>
+          </ul>
+          <div class="mt-8 flex gap-3">
+            <a href="#" class="px-6 py-3 rounded-xl bg-primary-500 text-white hover:bg-primary-600">Đăng ký tư vấn</a>
+            <a href="#" class="px-6 py-3 rounded-xl border border-slate-200 hover:border-primary-500 hover:text-primary-600">Xem thêm</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= COURSES ================= -->
+    <section id="courses" class="py-16 lg:py-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex items-end justify-between gap-6">
+          <div>
+            <p class="text-primary-600 font-semibold">Khoá học nổi bật</p>
+            <h2 class="mt-2 text-3xl md:text-4xl font-extrabold">Chọn lộ trình phù hợp</h2>
+          </div>
+          <a href="#" class="hidden md:inline-flex px-4 py-2 rounded-lg border border-slate-200 hover:border-primary-500 hover:text-primary-600">Xem tất cả</a>
+        </div>
+
+        <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Course Card -->
+          <article class="group rounded-2xl border border-slate-100 overflow-hidden bg-white shadow-soft">
+            <div class="relative">
+              <img class="h-48 w-full object-cover" src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1880&auto=format&fit=crop" alt="Web Development"/>
+              <span class="absolute top-3 left-3 inline-block rounded-full bg-white/90 px-3 py-1 text-xs font-medium">Lập trình</span>
+            </div>
+            <div class="p-6">
+              <h3 class="font-bold text-lg group-hover:text-primary-600">Full‑stack Web với React & Node</h3>
+              <p class="mt-2 text-sm text-slate-500">Xây dựng web sản phẩm thực tế từ A–Z, triển khai trên cloud.</p>
+              <div class="mt-4 flex items-center justify-between">
+                <div class="flex items-center gap-1 text-amber-500" aria-label="Đánh giá 4.8/5">
+                  <svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.802 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.802-2.034a1 1 0 00-1.176 0l-2.802 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <span class="text-sm font-semibold">4.8</span>
+                </div>
+                <p class="font-bold">2.900.000đ</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="group rounded-2xl border border-slate-100 overflow-hidden bg-white shadow-soft">
+            <div class="relative">
+              <img class="h-48 w-full object-cover" src="https://images.unsplash.com/photo-1557800636-894a64c1696f?q=80&w=1880&auto=format&fit=crop" alt="UI/UX Design"/>
+              <span class="absolute top-3 left-3 inline-block rounded-full bg-white/90 px-3 py-1 text-xs font-medium">Thiết kế</span>
+            </div>
+            <div class="p-6">
+              <h3 class="font-bold text-lg group-hover:text-primary-600">UI/UX từ cơ bản đến nâng cao</h3>
+              <p class="mt-2 text-sm text-slate-500">Nguyên lý thiết kế, wireframe, prototype và thử nghiệm người dùng.</p>
+              <div class="mt-4 flex items-center justify-between">
+                <div class="flex items-center gap-1 text-amber-500" aria-label="Đánh giá 4.7/5">
+                  <svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.802 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.802-2.034a1 1 0 00-1.176 0l-2.802 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <span class="text-sm font-semibold">4.7</span>
+                </div>
+                <p class="font-bold">2.400.000đ</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="group rounded-2xl border border-slate-100 overflow-hidden bg-white shadow-soft">
+            <div class="relative">
+              <img class="h-48 w-full object-cover" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1880&auto=format&fit=crop" alt="Digital Marketing"/>
+              <span class="absolute top-3 left-3 inline-block rounded-full bg-white/90 px-3 py-1 text-xs font-medium">Marketing</span>
+            </div>
+            <div class="p-6">
+              <h3 class="font-bold text-lg group-hover:text-primary-600">Digital Marketing 360°</h3>
+              <p class="mt-2 text-sm text-slate-500">SEO, Ads, Content & phân tích dữ liệu đa kênh.</p>
+              <div class="mt-4 flex items-center justify-between">
+                <div class="flex items-center gap-1 text-amber-500" aria-label="Đánh giá 4.6/5">
+                  <svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.802 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.802-2.034a1 1 0 00-1.176 0l-2.802 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <span class="text-sm font-semibold">4.6</span>
+                </div>
+                <p class="font-bold">2.100.000đ</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= STATS ================= -->
+    <section class="py-16 bg-white">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 rounded-2xl border border-slate-100 p-6 shadow-soft">
+          <div class="text-center">
+            <p class="text-3xl font-extrabold text-slate-900" data-count="5000">5,000+</p>
+            <p class="text-sm text-slate-500">Cựu học viên</p>
+          </div>
+          <div class="text-center">
+            <p class="text-3xl font-extrabold text-slate-900" data-count="120">120+</p>
+            <p class="text-sm text-slate-500">Khoá học</p>
+          </div>
+          <div class="text-center">
+            <p class="text-3xl font-extrabold text-slate-900" data-count="95">95%</p>
+            <p class="text-sm text-slate-500">Tỉ lệ có việc</p>
+          </div>
+          <div class="text-center">
+            <p class="text-3xl font-extrabold text-slate-900" data-count="250">250+</p>
+            <p class="text-sm text-slate-500">Đối tác</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= EVENTS ================= -->
+    <section id="events" class="py-16 lg:py-24 bg-slate-50">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex items-end justify-between gap-6">
+          <div>
+            <p class="text-primary-600 font-semibold">Sự kiện</p>
+            <h2 class="mt-2 text-3xl md:text-4xl font-extrabold">Workshop sắp diễn ra</h2>
+          </div>
+          <a href="#" class="hidden md:inline-flex px-4 py-2 rounded-lg border border-slate-200 hover:border-primary-500 hover:text-primary-600">Xem tất cả</a>
+        </div>
+
+        <div class="mt-10 grid md:grid-cols-2 gap-6">
+          <!-- Event item -->
+          <article class="flex gap-5 p-5 bg-white rounded-2xl border border-slate-100 shadow-soft">
+            <div class="flex-shrink-0 w-20 h-20 rounded-xl bg-primary-50 text-primary-600 flex flex-col items-center justify-center">
+              <span class="text-2xl font-extrabold">12</span>
+              <span class="text-xs">OCT</span>
+            </div>
+            <div>
+              <h3 class="font-bold text-lg">Làm chủ React trong 4 tuần</h3>
+              <p class="text-sm text-slate-500 mt-1">Zoom Online • 19:00–21:00</p>
+              <p class="mt-2 text-slate-600">Tổng hợp kiến thức cốt lõi & best practices để tự tin đi làm.</p>
+              <div class="mt-3 flex items-center gap-3">
+                <a class="px-4 py-2 rounded-lg bg-primary-500 text-white hover:bg-primary-600" href="#">Đăng ký</a>
+                <a class="text-primary-600 hover:underline" href="#">Chi tiết</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="flex gap-5 p-5 bg-white rounded-2xl border border-slate-100 shadow-soft">
+            <div class="flex-shrink-0 w-20 h-20 rounded-xl bg-primary-50 text-primary-600 flex flex-col items-center justify-center">
+              <span class="text-2xl font-extrabold">25</span>
+              <span class="text-xs">OCT</span>
+            </div>
+            <div>
+              <h3 class="font-bold text-lg">UI/UX: Tư duy thiết kế sản phẩm</h3>
+              <p class="text-sm text-slate-500 mt-1">Trực tiếp tại HN • 14:00–17:00</p>
+              <p class="mt-2 text-slate-600">Học cách xây trải nghiệm người dùng mượt mà & nhất quán.</p>
+              <div class="mt-3 flex items-center gap-3">
+                <a class="px-4 py-2 rounded-lg bg-primary-500 text-white hover:bg-primary-600" href="#">Đăng ký</a>
+                <a class="text-primary-600 hover:underline" href="#">Chi tiết</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TEACHERS ================= -->
+    <section id="teachers" class="py-16 lg:py-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto">
+          <p class="text-primary-600 font-semibold">Đội ngũ giảng viên</p>
+          <h2 class="mt-2 text-3xl md:text-4xl font-extrabold">Học từ người giỏi nhất</h2>
+          <p class="mt-3 text-slate-600">Các mentor dày dặn kinh nghiệm thực tế tại doanh nghiệp hàng đầu.</p>
+        </div>
+
+        <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Teacher card -->
+          <div class="p-6 rounded-2xl border border-slate-100 text-center bg-white shadow-soft">
+            <img class="w-28 h-28 rounded-full object-cover mx-auto" src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=1200&auto=format&fit=crop" alt="Teacher"/>
+            <h3 class="mt-4 font-bold">Nguyễn Minh</h3>
+            <p class="text-sm text-slate-500">Senior Frontend Engineer</p>
+          </div>
+          <div class="p-6 rounded-2xl border border-slate-100 text-center bg-white shadow-soft">
+            <img class="w-28 h-28 rounded-full object-cover mx-auto" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1200&auto=format&fit=crop" alt="Teacher"/>
+            <h3 class="mt-4 font-bold">Lê Thu</h3>
+            <p class="text-sm text-slate-500">Product Designer</p>
+          </div>
+          <div class="p-6 rounded-2xl border border-slate-100 text-center bg-white shadow-soft">
+            <img class="w-28 h-28 rounded-full object-cover mx-auto" src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=1200&auto=format&fit=crop" alt="Teacher"/>
+            <h3 class="mt-4 font-bold">Trần Hoàng</h3>
+            <p class="text-sm text-slate-500">Digital Marketer</p>
+          </div>
+          <div class="p-6 rounded-2xl border border-slate-100 text-center bg-white shadow-soft">
+            <img class="w-28 h-28 rounded-full object-cover mx-auto" src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=1200&auto=format&fit=crop" alt="Teacher"/>
+            <h3 class="mt-4 font-bold">Phạm Mai</h3>
+            <p class="text-sm text-slate-500">Business Analyst</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TESTIMONIALS (Simple carousel) ================= -->
+    <section class="py-16 bg-slate-50">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between">
+          <h2 class="text-2xl md:text-3xl font-extrabold">Học viên nói gì?</h2>
+          <div class="hidden md:flex gap-2">
+            <button id="prev" class="w-9 h-9 rounded-lg border border-slate-200 inline-flex items-center justify-center">◀</button>
+            <button id="next" class="w-9 h-9 rounded-lg border border-slate-200 inline-flex items-center justify-center">▶</button>
+          </div>
+        </div>
+
+        <div id="ts" class="mt-8 flex gap-6 overflow-x-auto no-scrollbar scroll-smooth snap-x">
+          <figure class="min-w-[320px] md:min-w-[420px] snap-start p-6 rounded-2xl bg-white border border-slate-100 shadow-soft">
+            <blockquote class="text-slate-600">“Khoá React cực kỳ thực tế, mentor hỗ trợ 24/7. Sau 2 tháng mình apply đậu vị trí Frontend.”</blockquote>
+            <figcaption class="mt-4 flex items-center gap-3">
+              <img class="w-10 h-10 rounded-full object-cover" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1200&auto=format&fit=crop" alt="avatar"/>
+              <div>
+                <p class="font-medium">Thảo Nguyên</p>
+                <p class="text-xs text-slate-500">Frontend Developer</p>
+              </div>
+            </figcaption>
+          </figure>
+
+          <figure class="min-w-[320px] md:min-w-[420px] snap-start p-6 rounded-2xl bg-white border border-slate-100 shadow-soft">
+            <blockquote class="text-slate-600">“Mình thích cách học qua dự án. Portfolio sau khoá học giúp mình gây ấn tượng với nhà tuyển dụng.”</blockquote>
+            <figcaption class="mt-4 flex items-center gap-3">
+              <img class="w-10 h-10 rounded-full object-cover" src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=1200&auto=format&fit=crop" alt="avatar"/>
+              <div>
+                <p class="font-medium">Xuân Trường</p>
+                <p class="text-xs text-slate-500">Product Designer</p>
+              </div>
+            </figcaption>
+          </figure>
+
+          <figure class="min-w-[320px] md:min-w-[420px] snap-start p-6 rounded-2xl bg-white border border-slate-100 shadow-soft">
+            <blockquote class="text-slate-600">“Thầy cô nhiệt tình, kiến thức cập nhật. Rất đáng tiền.”</blockquote>
+            <figcaption class="mt-4 flex items-center gap-3">
+              <img class="w-10 h-10 rounded-full object-cover" src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=1200&auto=format&fit=crop" alt="avatar"/>
+              <div>
+                <p class="font-medium">Hải Nam</p>
+                <p class="text-xs text-slate-500">Digital Marketer</p>
+              </div>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= BLOG ================= -->
+    <section class="py-16 lg:py-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex items-end justify-between gap-6">
+          <div>
+            <p class="text-primary-600 font-semibold">Blog</p>
+            <h2 class="mt-2 text-3xl md:text-4xl font-extrabold">Tin tức & bài viết</h2>
+          </div>
+          <a href="#" class="hidden md:inline-flex px-4 py-2 rounded-lg border border-slate-200 hover:border-primary-500 hover:text-primary-600">Xem tất cả</a>
+        </div>
+
+        <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <article class="group rounded-2xl border border-slate-100 overflow-hidden bg-white shadow-soft">
+            <img class="h-44 w-full object-cover" src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=1880&auto=format&fit=crop" alt="blog"/>
+            <div class="p-6">
+              <a class="text-sm text-primary-600 font-medium" href="#">Career</a>
+              <h3 class="mt-1 font-bold text-lg group-hover:text-primary-600">Lộ trình trở thành Frontend Dev</h3>
+              <p class="mt-2 text-sm text-slate-500">Những kỹ năng cần có, công nghệ trọng tâm và cách học hiệu quả.</p>
+            </div>
+          </article>
+          <article class="group rounded-2xl border border-slate-100 overflow-hidden bg-white shadow-soft">
+            <img class="h-44 w-full object-cover" src="https://images.unsplash.com/photo-1513258496099-48168024aec0?q=80&w=1880&auto=format&fit=crop" alt="blog"/>
+            <div class="p-6">
+              <a class="text-sm text-primary-600 font-medium" href="#">Design</a>
+              <h3 class="mt-1 font-bold text-lg group-hover:text-primary-600">5 nguyên tắc UI/UX căn bản</h3>
+              <p class="mt-2 text-sm text-slate-500">Tương phản, phân cấp, khoảng trắng, nhất quán và phản hồi.</p>
+            </div>
+          </article>
+          <article class="group rounded-2xl border border-slate-100 overflow-hidden bg-white shadow-soft">
+            <img class="h-44 w-full object-cover" src="https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?q=80&w=1880&auto=format&fit=crop" alt="blog"/>
+            <div class="p-6">
+              <a class="text-sm text-primary-600 font-medium" href="#">Marketing</a>
+              <h3 class="mt-1 font-bold text-lg group-hover:text-primary-600">Nghệ thuật viết content chuyển đổi</h3>
+              <p class="mt-2 text-sm text-slate-500">AIDA, storytelling & chiến lược đa kênh.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= NEWSLETTER / CONTACT ================= -->
+    <section id="contact" class="py-16 lg:py-24 bg-slate-50">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-extrabold">Nhận tài liệu miễn phí mỗi tuần</h2>
+          <p class="mt-3 text-slate-600">Tổng hợp tips & tài nguyên học tập chất lượng cao, gửi vào email của bạn.</p>
+          <form class="mt-6 flex gap-3">
+            <input type="email" placeholder="Email của bạn" class="flex-1 rounded-xl border-slate-200 focus:border-primary-500 focus:ring-primary-500"/>
+            <button class="px-6 py-3 rounded-xl bg-primary-500 text-white hover:bg-primary-600">Đăng ký</button>
+          </form>
+          <p class="mt-3 text-xs text-slate-500">Bằng cách đăng ký, bạn đồng ý với điều khoản & chính sách bảo mật.</p>
+        </div>
+        <div class="rounded-2xl bg-white border border-slate-100 p-6 shadow-soft">
+          <h3 class="text-xl font-bold">Liên hệ tư vấn</h3>
+          <div class="mt-4 grid sm:grid-cols-2 gap-4">
+            <input type="text" placeholder="Họ và tên" class="rounded-lg border-slate-200 focus:border-primary-500 focus:ring-primary-500">
+            <input type="email" placeholder="Email" class="rounded-lg border-slate-200 focus:border-primary-500 focus:ring-primary-500">
+            <input type="tel" placeholder="Số điện thoại" class="rounded-lg border-slate-200 focus:border-primary-500 focus:ring-primary-500">
+            <select class="rounded-lg border-slate-200 focus:border-primary-500 focus:ring-primary-500">
+              <option>Chọn khoá học</option>
+              <option>React</option>
+              <option>UI/UX</option>
+              <option>Marketing</option>
+            </select>
+            <textarea placeholder="Nội dung" rows="4" class="sm:col-span-2 rounded-lg border-slate-200 focus:border-primary-500 focus:ring-primary-500"></textarea>
+          </div>
+          <button class="mt-4 w-full px-6 py-3 rounded-xl bg-primary-500 text-white hover:bg-primary-600">Gửi</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="pt-16 bg-slate-900 text-slate-300">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+          <div>
+            <a href="#home" class="flex items-center gap-2">
+              <span class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-primary-500 text-white font-bold">F</span>
+              <span class="text-xl font-extrabold">Fox</span>
+            </a>
+            <p class="mt-3 text-sm text-slate-400">Nền tảng học tập hiện đại, giúp bạn chinh phục kỹ năng nhanh chóng.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Về Fox</h4>
+            <ul class="mt-3 space-y-2 text-sm">
+              <li><a class="hover:text-primary-300" href="#about">Giới thiệu</a></li>
+              <li><a class="hover:text-primary-300" href="#teachers">Giảng viên</a></li>
+              <li><a class="hover:text-primary-300" href="#events">Sự kiện</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Khoá học</h4>
+            <ul class="mt-3 space-y-2 text-sm">
+              <li><a class="hover:text-primary-300" href="#courses">Lập trình</a></li>
+              <li><a class="hover:text-primary-300" href="#courses">Thiết kế</a></li>
+              <li><a class="hover:text-primary-300" href="#courses">Marketing</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Liên hệ</h4>
+            <ul class="mt-3 space-y-2 text-sm">
+              <li>Email: hello@fox.academy</li>
+              <li>Hotline: 0123 456 789</li>
+              <li>Địa chỉ: 123 Nguyễn Trãi, Hà Nội</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="py-6 flex flex-col sm:flex-row items-center justify-between text-sm text-slate-400">
+          <p>© <span id="year"></span> Fox Academy. All rights reserved.</p>
+          <div class="flex gap-4 mt-3 sm:mt-0">
+            <a class="hover:text-primary-300" href="#">Điều khoản</a>
+            <a class="hover:text-primary-300" href="#">Bảo mật</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ================= SCRIPTS ================= -->
+    <script>
+      // Mobile menu toggle
+      const menuBtn = document.getElementById('menuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      menuBtn?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+      // Testimonials simple scroll controls
+      const scroller = document.getElementById('ts');
+      document.getElementById('prev')?.addEventListener('click', () => scroller.scrollBy({ left: -400, behavior: 'smooth' }));
+      document.getElementById('next')?.addEventListener('click', () => scroller.scrollBy({ left: 400, behavior: 'smooth' }));
+
+      // Current year
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
