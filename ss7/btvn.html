@@ -7,9 +7,63 @@
   </head>
   <body>
     <script>
-      if (n <= 0) return 0;
-      let s = 0;
-      for (let i = 1; i <= n; i++) s = Math.sqrt(i + s);
+      //   if (n <= 0) return 0;
+      //   let s = 0;
+      //   for (let i = 1; i <= n; i++) s = Math.sqrt(i + s);
+
+      //   if (n <= 0) return 0;
+      //   let s = 0;
+      //   for (let i = n; i >= 1; i--) s = Math.sqrt(i + s);
+
+      // Câu 1
+      //   let sum = 0;
+      //   for (let i = 1; i <= 100; i++) {
+      //     sum = sum + i;
+      //   }
+
+      //   console.log(sum)
+
+      // Câu 2
+      //   for (let i = 0; i <= 100; i++) {
+      //     if (i % 3 == 0 && i % 5 == 0) {
+      //       console.log(i);
+      //     }
+      //   }
+
+      // Câu 3
+
+      //   let number = +prompt("Nhập số nguyên bất kì");
+
+      //   if (isNaN(number)) {
+      //     console.log("Vui lòng nhập vào số");
+      //   } else {
+      //     // Chỗ này chắc chắn number là số
+      //     // Kiểm tra tiếp số này có phải số nguyên dương hay không
+      //     if (number % 1 == 0 && number > 0) {
+      //       // Đi tính giai thừa 5! = 1*2*3*4*5
+      //       let result = 1;
+      //       for (let i = 1; i <= number; i++) {
+      //         result *= i;
+      //       }
+
+      //       // Sau khi kết thúc for sẽ in ra kết quả cuối cùng
+      //       console.log(result);
+      //     }
+      //   }
+
+      //   Câu 5
+      let n = prompt("Số chuyển qua nhị phân");
+      let binary = "";
+      while (n > 0) {
+        let rest = n % 2;
+
+        // Cộng phần dư vào chuỗi kết quả
+        binary = rest + binary;
+
+        n = Math.floor(n / 2);
+      }
+
+      console.log(binary);
     </script>
   </body>
 </html>
