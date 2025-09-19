@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Câu 3
+      //   const car = { brand: "Toyota", model: "Camry", year: 2020 };
+      //   let count = 0;
+      //   for (let key in car) {
+      //     count += 1;
+      //   }
+
+      //   console.log(count);
+
+      // Câu 4
+      //   const product = { name: "Laptop", price: 1000 };
+      //   let result = []
+      //   let index = 0
+      //   // [ ["name", "Laptop"], ["price", 1000] ]
+      //   for (let key in product) {
+      //     result[index] = [ key, product[key] ]
+
+      //     index += 1
+      //   }
+
+      //   console.log(result)
+
+      // Câu 6
+      //   const products = [
+      //     { name: "Phone", price: 50 },
+      //     { name: "Camera", price: 300 },
+      //     { name: "Tablet", price: 700 },
+      //   ];
+
+      //   const result = [];
+      //   let index = 0;
+      //   for (let i = 0; i < products.length; i++) {
+      //     if (products[i].price > 100) {
+      //       result[index] = products[i];
+      //       index += 1;
+      //     }
+      //   }
+
+      // Câu 8
+      //   const obj1 = { a: 1, b: 2 };
+      //   const obj2 = { c: 3, d: 4 };
+
+      //   const result = {};
+
+      //   for (let key1 in obj1) {
+      //     result[key1] = obj1[key1];
+      //   }
+
+      //   for (let key2 in obj2) {
+      //     result[key2] = obj1[key2];
+      //   }
+
+      // Câu 10
+      const car = { brand: "BMW", model: "X5" };
+
+      console.log("color" in car);
+      console.log(!!car["color"]);
+    </script>
+  </body>
+</html>
