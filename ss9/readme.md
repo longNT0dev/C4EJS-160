@@ -1,6 +1,6 @@
 1) Siêu thị mini – Tính hóa đơn có khuyến mãi
 
-Bối cảnh: Bạn có giỏ hàng là một mảng các món hàng. Trái cây giảm 10%. Nếu tổng trước khuyến mãi loại theo danh mục vượt 100 thì giảm thêm 5% trên tổng sau giảm theo danh mục.
+Bối cảnh: Bạn có giỏ hàng là một mảng các món hàng. Trái cây giảm 10%. Nếu tổng hóa đơn vượt 100 thì giảm thêm 5% trên tổng hóa đơn
 
 Dữ liệu mẫu:
 

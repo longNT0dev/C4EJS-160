@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Câu 2
+      const calculateAverage = (student, scoreElement) => {
+        let tongDiem = 0;
+        // Tính tổng điểm của học sinh
+        for (let score of student.scores) {
+          tongDiem += score;
+
+          if (score < scoreElement) {
+            student.flag = "needs help";
+          }
+        }
+
+        return tongDiem / student.scores.length;
+      };
+
+      const categoryStudents = (students, average = 6.5, scoreElement = 5) => {
+        for (let i = 0; i < students.length; i++) {
+          // Mỗi vòng lặp đang xét cho 1 học sinh
+          let diemTrungBinh = calculateAverage(students[i], scoreElement);
+
+          if (diemTrungBinh >= average) {
+            students[i].status = "Pass";
+          } else {
+            students[i].status = "Fail";
+          }
+        }
+
+        return students;
+      };
+
+      console.log(
+        categoryStudents([
+          { name: "An", scores: [8, 7, 9] },
+          { name: "Binh", scores: [5, 6, 5] },
+          { name: "Chi", scores: [9, 9, 10] },
+          { name: "Dung", scores: [4, 7, 6] },
+        ])
+      );
+    </script>
+  </body>
+</html>

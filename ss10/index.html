@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   const width = 10;
+      //   const length = 20;
+      //   const perimeter = (width + length) * 2;
+
+      // Hàm: Tập hợp của nhiều câu lệnh để thực hiện 1 công việc cụ thể, có thể tái sử dụng với những công việc giống nhau
+      // Tham số (parameters): Giá trị đầu vào(input) cho hàm
+      // return: Cho phép kết thúc hàm
+      // Và trả về giá trị
+      // Không trả về gì cả
+      //   function isNumber(number) {
+      //     if (Number.isNaN(+number)) {
+      //       return false;
+      //     }
+
+      //     return true;
+      //   }
+
+      // Regular function
+      //   function tinhChuViHcn(chieuDai, chieuRong) {
+      //     // Validate chieuDai, chieuRong có phải số không
+      //     // console.log(isNumber(chieuDai))
+      //     // console.log(isNumber(chieuRong))
+
+      //     // Dùng giá trị true/false để kiểm tra, thông báo lỗi, kết thúc
+      //     if (!isNumber(chieuDai)) {
+      //       console.log("Chiều dài nhập vào không phải là số");
+      //       return;
+      //     }
+
+      //     if (!isNumber(chieuRong)) {
+      //       console.log("Chiều rộng nhập vào không phải là số");
+      //       return;
+      //     }
+      //     // Validate chieuDai > chieuRong
+
+      //     // Trường hợp dữ liệu hợp lệ
+      //     let perimeter = (chieuDai + chieuRong) * 2;
+
+      //     console.log(
+      //       `Chu vi của hình chữ nhật có chiều dài ${chieuDai} và chiều rộng ${chieuRong} là: ${perimeter}`
+      //     );
+      //   }
+
+      //   //   tinhChuViHcn(8, 10);
+      //   //   tinhChuViHcn(5, 15);
+      //   //   tinhChuViHcn(4, 8);
+      //   tinhChuViHcn("stm", "abc");
+
+      // Arrow function (ES6, ES7,...)
+      //   const tinhChuViHcn = (chieuDai, chieuRong) => (chieuDai + chieuRong) * 2;
+
+      //   console.log(tinhChuViHcn(5, 4))
+
+      // Anonymous function => callback
+      //   (() => {
+      //     let tinhChuViHcn = (chieuDai, chieuRong) => (chieuDai + chieuRong) * 2;
+      //     console.log(tinhChuViHcn(5, 4));
+      //   })();
+
+      //   Tính tổng của n số
+      // ... => Rest Operator
+      //   const sum = (soMu, ...numbers) => {
+      //     console.log(a1, a2);
+      //     console.log(numbers);
+      //     let result = 0;
+      //     for (let i = 0; i < numbers.length; i++) {
+      //       result += numbers[i];
+      //     }
+
+      //     return result;
+      //   };
+
+      //   let sumResult = sum(1, 2, 3, 4, 5, 6);
+
+      //   console.log(sumResult);
+
+      // Giá trị mặc định cho tham số fontSize = 14 khi không truyền
+      //   const calculateFontSizeScreen = (
+      //     widthScreen,
+      //     heightScreen,
+      //     fontSize = 14
+      //   ) => {
+      //     // Phạm vi
+      //     console.log(fontSize);
+      //     let ratio = widthScreen / heightScreen;
+
+      //     return ratio * fontSize;
+      //   };
+
+      //   calculateFontSizeScreen(10, 5);
+      //   calculateFontSizeScreen(10, 5, 16);
+
+      let user = {
+        name: "Long",
+        age: 40,
+        register: () => {
+            console.log("Ăn!")
+        },
+        login: () => {
+
+        },
+        postMessage: () => {
+
+        },
+      };
+    </script>
+  </body>
+</html>
