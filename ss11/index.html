@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let arr = [1, 3, 5, 7, 9];
+
+      // Các phương thức cơ bản
+      // push: Thêm phần tử vào cuối mảng
+      arr.push(11, 15);
+      console.log("Mảng sau khi thêm vào cuối", arr);
+      // shift: Xoá phần tử đầu mảng
+      arr.shift();
+      console.log("Mảng sau khi xoá phần tử đầu", arr);
+      // unshift: Thêm phần tử vào đầu mảng
+      arr.unshift(24);
+      console.log("Mảng sau thêm phần tử vào đầu", arr);
+      // pop: Xoá phần tử cuối mảng
+      arr.pop();
+      console.log("Mảng sau khi xoá phần tử cuối", arr);
+
+      // [(24, 3, 5, 7, 9, 11)]; => [24, 3, 5, 99, 100, 11]
+      // => Ta đã xóa đi các giá trị 7, 9 và thêm vào 2 giá trị 99, 100
+      // Các phương thức nâng cao
+      // splice: Thêm, xóa phần tử ở vị trí bất kỳ
+      //   arr.splice(3, 2, 99, 100);
+      //   console.log("Mảng sau khi sử dụng splice", arr);
+
+      // [(24, 3, 5, 7, 9, 11)] => [24, 3, 7, 9, 11]
+      // => Ta xóa đi giá trị 5
+      //   arr.splice(2, 1)
+      // [(24, 3, 5, 7, 9, 11)] => [24, 3, 7, 11]
+      // arr.splice(2, 3, 7)
+      // arr.splice(2, 4, 7, 11)
+
+      //   arr.splice(2, 1); //=> 24, 3, 7, 9, 11
+      //   arr.splice(3, 1); //=> 24, 3, 7, 11
+      //   console.log(arr);
+
+      // map: Lặp qua từng phần tử của mảng và trả về mảng mới
+      let currentArr = [2, 4, 6, 8, 10];
+      // Tạo ra 1 mảng mới với các giá trị gấp đôi mảng ban đầu
+
+      //   for (let i = 0; i < currentArr.length; i++) {
+      //     currentArr[i] = currentArr[i] * 2;
+      //   }
+
+      //   console.log("Mảng sau khi nhân đôi", currentArr);
+
+      //   let result1 = currentArr.map((v, i, arr) => {
+      //     // Thân hàm
+      //     console.log("Giá trị của phần tử trong mảng", v);
+      //     console.log("Chỉ số của mảng", i);
+      //     console.log("Mảng đang thao tác", arr);
+      //     return v * 2;
+      //   });
+
+      //   console.log(result1)
+
+      //   let result2 = currentArr.map((v, i) => {});
+
+      //   let result3 = currentArr.map((v) => {});
+
+      //   let result1 = currentArr.map((v) => v * 2);
+
+      // Các phương thức của object
+      //   Object.keys()
+      //   Object.values()
+      //   let a = {
+      //     name: "Nguyen Van A",
+      //     age: 18,
+      //     address: "Ha Noi",
+      //   };
+      //   let b = {
+      //     name: "Nguyen Van B",
+      //     age: 20,
+      //     email: "test@gmail.com"
+      //   }
+
+      //   let result = Object.assign({}, a, b);
+
+      //   console.log(result) // {name: 'Nguyen Van B', age: 20, address: 'Ha Noi', email: 'test@gmail.com'}
+
+      // Tham chiếu, tham trị
+
+      // Kiểu dữ liệu nguyên thủy: Number, String, Boolean => Truyền tham trị (giá trị)
+      //   let a = 6;
+      //   let b = a;
+
+      //   a = 10;
+
+      //   console.log(a);
+      //   console.log(b);
+
+      // Kiểu dữ liệu phức: Array, Object => Truyền tham chiếu (địa chỉ)
+      //   let a = [1, 2, 3]
+      //   let b = a
+
+      //   a.push(4)
+
+      //   console.log(a)
+      //   console.log(b)
+
+      // Map, Filter
+      // Sprea Operator ... , Object.assign
+    </script>
+  </body>
+</html>

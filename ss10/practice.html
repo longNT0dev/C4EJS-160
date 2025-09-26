@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Câu 1
+      function phuongTrinhBacNhat(A = 3, B = 4, x) {
+        console.log(A * x + B);
+      }
+
+      // Câu 2
+      const chuViHcn = (width, height) => (width + height) * 2;
+
+      // Câu 3
+      const dienTichHinhTron = (r) => (Math.PI * (r * r)).toFixed(3);
+      console.log(dienTichHinhTron(5));
+
+      // Câu 4: Số nguyên tố - Là số không chia hết cho các số từ 2 đến căn bậc 2 của nó
+      const laSoNguyenTo = (number) => {
+        for (let i = 2; i <= Math.sqrt(number); i++) {
+          if (number % i == 0) {
+            return false;
+          }
+        }
+
+        return true;
+      };
+
+      //   console.log(laSoNguyenTo(2))
+
+      // Câu 7
+      //   const laChuoiDoiXung = (str) => {
+      //     for (let i = 0; i < str.length; i++) {
+      //       if (str[i] != str[str.length - 1 - i]) {
+      //         return false;
+      //       }
+      //     }
+
+      //     return true;
+      //   };
+
+      // Câu 8
+    //   const isAllEven = (arr) => {
+    //     for (let item of arr) {
+    //         if(item % 2 != 0) {
+    //             return false
+    //         }
+    //     }
+
+    //     return true
+    //   };
+
+    
+    </script>
+  </body>
+</html>
