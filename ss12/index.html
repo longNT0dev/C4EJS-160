@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      p {
+        color: blue;
+      }
+
+      .byClass {
+      }
+
+      #byId {
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <button onclick="alert('You clicked me!')">Click me!</button> -->
+
+    <!-- DOM => Tác động vào nội dung bên trong HTML hoặc thay đổi style CSS => Tạo ra 1 trang web động, có tính tương tác cao -->
+    <p class="byClass" id="byId">
+      <span>Hello</span><br />
+      <span>World!</span>
+    </p>
+
+    <input type="text" id="name" />
+
+    <ul id="container">
+      <!-- Tên môn học - Thời gian học -->
+      <!-- <li>JS - 3 tháng</li>
+      <li>Java - 4 tháng</li>
+      <li>PHP - 5 tháng</li>
+      <li>C# - 6 tháng</li>
+      <li>Ruby - 7 tháng</li> -->
+    </ul>
+
+    <script>
+      // Làm sao để tìm được thẻ HTML muốn thay đổi nội dung
+      // document là object,  thành phân gốc để thao tác với HTML
+      // Tìm theo tên thẻ
+      // let pTags = document.getElementsByTagName("p")
+      // console.log(pTags)
+
+      // Tìm theo class
+      // let tagByClasses = document.getElementsByClassName("byClass")
+      // console.log(tagByClasses)
+
+      // Tìm theo id
+      let tagById = document.getElementById("byId");
+      console.dir(tagById);
+
+      // => Id sẽ trả về thẻ đầu tiên thỏa mãn điều kiện tìm kiếm
+      // => Tìm theo tên thẻ và tìm theo tên class sẽ trả về 1 mảng các thẻ thỏa mãn điều kiện
+      // => Chỉ nên sử dụng 2 cách: getElementsByClassName, getElementById
+
+      // querySelector: Tìm kiếm theo bộ chọn css
+      // let query = document.querySelector("#byId .child")
+
+      // Lấy ra rồi thì thay đổi nội dung thẻ, style thẻ như thế nào?
+      // Các thẻ HTML là các object => Object thì sẽ có các thuộc tính
+
+      // READ
+      console.log("Đây là nội dung text của thẻ", tagById.innerText);
+      console.log("Đây là html bên trong thẻ", tagById.innerHTML);
+
+      // UPDATE
+      tagById.innerText = "Giá trị mới";
+
+      tagById.innerHTML = `<h1>Xin chào, đây là thẻ h1</h1>`;
+
+      // Render giao diện dựa vào mảng dữ liệu
+      let arr = [
+        {
+          name: "JS",
+          time: "3 tháng",
+        },
+        {
+          name: "Java",
+          time: "4 tháng",
+        },
+        {
+          name: "PHP",
+          time: "5 tháng",
+        },
+        {
+          name: "C#",
+          time: "6 tháng",
+        },
+        {
+          name: "Ruby",
+          time: "7 tháng",
+        },
+      ];
+
+      let template = `<li>Tên môn học - Thời gian học</li>`;
+
+      let container = document.getElementById("container");
+
+      // Thêm các thẻ li vào bên trong thẻ ul có id là container
+      for (let i = 0; i < arr.length; i++) {
+        container.innerHTML += `<li class="item">${arr[i].name} - ${arr[i].time}</li>`;
+      }
+
+
+      // Sau khi render ra giao diện, trong HTML sẽ có các thẻ li với class item
+      let items = document.getElementsByClassName("item") // => Trả về 1 mảng
+
+      for(let i = 0; i< items.length; i++) {
+        items[i].addEventListener("click", (e) => {
+            console.log(arr[i])
+        })
+      }
+
+
+      // Thay đổi CSS của thẻ
+      //   tagById.style.color = "red"
+      //   tagById.style.fontSize = "30px"
+      //   tagById.style.backgroundColor = "black"
+      //   tagById.style.display = "block"
+
+      // Lấy ra thẻ muốn gán sự kiện
+      //   tagById.onclick = function () {
+      //     alert("Bạn đã click vào thẻ p1");
+      //   };
+
+      //   tagById.onclick = function () {
+      //     alert("Bạn đã click vào thẻ p2");
+      //   };
+
+      //   tagById.addEventListener("click", (e) => {
+      //     // Thân hàm callback
+      //     console.log(e);
+      //   });
+
+      //   tagById.addEventListener("click", (e) => {
+      //     // Thân hàm callback
+      //     console.log("Sự kiện 2", e);
+      //   });
+
+      // => onClick => Các sự kiện giống nhau trên 1 thẻ sẽ ghi đè. chỉ giữ lại sự kiện cuối cùng
+      // => addEventListener => Giữ lại tất cả các sự kiện
+
+      // Sự kiện change trên thẻ input giúp lấy ra giá trị từ người dùng
+      //   let input = document.getElementById("name");
+      // onChange
+      //   input.addEventListener("change", (e) => {
+      //     console.log(e)
+      //     console.log(e.target.value);
+      //   });
+    </script>
+  </body>
+</html>

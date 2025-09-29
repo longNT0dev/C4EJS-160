@@ -44,17 +44,104 @@
       //   };
 
       // Câu 8
-    //   const isAllEven = (arr) => {
-    //     for (let item of arr) {
-    //         if(item % 2 != 0) {
-    //             return false
-    //         }
-    //     }
+      //   const isAllEven = (arr) => {
+      //     for (let item of arr) {
+      //         if(item % 2 != 0) {
+      //             return false
+      //         }
+      //     }
 
-    //     return true
-    //   };
+      //     return true
+      //   };
 
-    
+      // Câu 10
+      // const findMaxNumber = (arr) => Math.max(...arr)
+
+      // console.log(findMaxNumber([1, 3, 5, 7, 9, 11, 15, 20, 4, 6, 8, 10]));
+
+      // Câu 11: Thuật toán sắp xếp (Bubble sort, Selection Sort)
+      // const sortAsc = (arr) => {
+      //   for (let i = 0; i < arr.length; i++) {
+      //     for (let j = i + 1; j < arr.length; j++) {
+      //       if (arr[i] > arr[j]) {
+      //         // Hoán đổi vị trí
+      //         let temp = arr[i];
+      //         arr[i] = arr[j];
+      //         arr[j] = temp;
+      //       }
+      //     }
+      //   }
+      // };
+
+      // Câu 12: Sắp xếp mảng trước rồi trả về phần tử thứ k - 1
+      // const findKLargestNumber = (arr, k) => {
+      //   let sortedArr = arr.sort((a, b) => a - b);
+
+      //   // console.log(sortedArr);
+
+      //   if (sortedArr.length < k) {
+      //     return null;
+      //   } else {
+      //     return sortedArr[k - 1];
+      //   }
+      // };
+
+      // console.log(findKLargestNumber([1, 6, 100, 20, 5], 3)); // 1 5 6 20 100
+
+      // Câu 13
+      const timSoLanXuatHienNhieuNhat = (arr) => {
+        let frequencyMap = {};
+        let maxCount = 0;
+        let mostFrequentNumber = null;
+
+        for (let number of arr) {
+          if (frequencyMap[number]) {
+            frequencyMap[number]++;
+          } else {
+            frequencyMap[number] = 1;
+          }
+
+          if (frequencyMap[number] > maxCount) {
+            maxCount = frequencyMap[number];
+            mostFrequentNumber = number;
+          }
+        }
+
+        return mostFrequentNumber;
+      };
+
+      timSoLanXuatHienNhieuNhat([1, 2, 3, 2, 1, 1, 4, 5, 10]);
+
+      // Câu 14:
+      const splitWords = (str) => {
+        // Split: Tách chuỗi string thành mảng dựa vào ký tự phân tách
+        // let words = str.split(" ");
+
+        // console.log(words);
+        let result = [];
+
+        let subStr = "";
+        for (let i = 0; i < str.length; i++) {
+          if (str[i] == " ") {
+            result.push(subStr);
+
+            subStr = "";
+          } else {
+            subStr += str[i]; //
+          }
+        }
+      };
+
+      splitWords("This is a test");
+
+      // Câu 15
+      const data = { a: 1, b: "hello", c: 3, d: "world" };
+      let sum = 0;
+      for (let key in data) {
+        if (typeof data[key] == "number") {
+          sum += data[key];
+        }
+      }
     </script>
   </body>
 </html>
