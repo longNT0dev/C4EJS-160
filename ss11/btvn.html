@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Câu 10:
+      // let originArr = [1, 2, 3]
+
+      // let result = [...originArr, 4]
+
+      // Câu 11:
+      // let originObj1 = { name: 'Alice', age: 25 }
+      // let originObj2 = { job: 'Developer' }
+
+      // let result1 = { ...originObj1, ...originObj2, city: 'New York' }
+      // let result2 = Object.assign({}, originObj1, originObj2, { city: 'New York' })
+
+      // Câu 12:
+      // let name = ['john', 'alice', 'tom']
+
+      // let upperCaseName = name.map((value, index) => value.toUpperCase()) // toLowerCase()
+
+      // console.log(upperCaseName)
+
+      // Câu 13:
+      // let arr = [1, 2, 3, 4, 5, 6]
+
+      // let filterEvenNumber = arr.filter(number => number % 2 == 0) // true
+
+      // console.log(filterEvenNumber)
+
+      // // Dùng reduce để tính tổng [2, 4, 6]
+      // let result = filterEvenNumber.reduce((prev, cur) => {
+      //     console.log("Đây là giá trị trước đó", prev)
+      //     console.log("Đây là giá trị hiện tại", cur)
+
+      //     return prev + cur
+      // }, 10)
+
+      // Câu 14:
+      //   let arr = [1, 2, 2, 3, 4, 4, 5];
+      //   let uniqueArr = [];
+      // for(let i = 0; i< arr.length; i++) {
+      //     // Không tìm thấy giá trị đó trong mảng uniqueArr
+      //     if(uniqueArr.indexOf(arr[i]) == -1) {
+      //         uniqueArr.push(arr[i])
+      //     }
+      // }
+
+      // for(let i = 0; i< arr.length; i++) {
+      //     // uniqueArr chưa chứa arr[i] thì ta thêm vào
+      //     if(!uniqueArr.includes(arr[i])) {
+      //         uniqueArr.push(arr[i])
+      //     }
+      // }
+
+      //  for(let i = 0; i< arr.length; i++) {
+      //     // uniqueArr không tìm thấy arr[i]
+      //     if(!uniqueArr.find(number => number == arr[i])) { // find sẽ trả về undefined nếu như không tìm thấy
+      //         uniqueArr.push(arr[i])
+      //     }
+      // }
+
+      //   uniqueArr =  new Set([...arr])
+
+      //   console.log(uniqueArr);
+
+      // Câu 15:
+      //   let arr = ["a", "b", "a", "c", "b", "a"];
+      //   let countObj = {};
+      //   for (let key of arr) {
+      //     if (countObj[key]) {
+      //       countObj[key] += 1;
+      //     } else {
+      //       countObj[key] = 1;
+      //     }
+      //   }
+    </script>
+  </body>
+</html>
