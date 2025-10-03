@@ -6,7 +6,12 @@
     <title>Document</title>
   </head>
   <body>
-    <h1 class="titleH1">This is content</h1>
+    <!-- <h1 class="titleH1">This is content</h1>
+    <button class="btnClick" onclick="toggle()">Click</button> -->
+
+    <input type="text" placeholder="Nhập nội dung" />
+    <button id="annouce">Annouce!</button>
+    <ul id="container"></ul>
 
     <script>
       // Câu 1:
@@ -14,16 +19,82 @@
       // let titleElement = document.getElementsByClassName("titleH1")
       // titleElement[0].innerText = "Đây là nội dung"
 
-      let theh1 = document.querySelector(".titleH1");
-      theh1.innerText = "Đây là nội dung";
+      // let theh1 = document.querySelector(".titleH1");
+      // theh1.innerText = "Đây là nội dung";
 
-      console.log(theh1);
+      // console.log(theh1);
 
       // Câu 2:
-      theh1.style.color = "red";
-      theh1.style.backgroundColor = "blue";
+      // theh1.style.color = "red";
+      // theh1.style.backgroundColor = "blue";
 
-      
+      // Câu 3:
+      // let isClicked = false;
+      function toggle() {
+        let theh1 = document.querySelector(".titleH1");
+
+        if (!isClicked) {
+          theh1.innerText = "Đây là nội dung";
+          theh1.style.color = "red";
+          theh1.style.backgroundColor = "blue";
+
+          isClicked = true;
+        } else {
+          theh1.innerText = "This is content";
+          theh1.style.color = "black";
+          theh1.style.backgroundColor = "white";
+
+          isClicked = false;
+        }
+      }
+
+      // Câu 4: Khi bấm nút => In ra giá trị bên trong thẻ input
+      // let btnAnnouce = document.getElementById("annouce");
+
+      // btnAnnouce.addEventListener("click", (e) => {
+      //   // e.target => LÀ thẻ button
+      //   // Alert ra giá trị bên trong thẻ input
+      //   let inputElement = document.querySelector("input");
+
+      //   alert(inputElement.value);
+      // })
+
+      // Câu 5:
+
+      // Kiểm tra xem trong localStorage có key tasks chưa? Nếu có rồi thì gán listTask = giá trị trong localStorage
+      // Nếu chưa có thì gán = []
+
+      const showTask = (tasks) => {
+        container.innerHTML = "";
+        for (let task of tasks) {
+          container.innerHTML += `<li>${task}</li>`;
+        }
+      };
+
+      let listTask;
+      let btnAnnouce = document.getElementById("annouce");
+      let container = document.getElementById("container");
+      if (localStorage.tasks) {
+        listTask = JSON.parse(localStorage.tasks); // Khi lấy array hay object từ localStorage về => Phải chuyển từ chuỗi JSON sang array hay object
+      } else {
+        listTask = [];
+      }
+
+      showTask(listTask);
+
+      btnAnnouce.addEventListener("click", (e) => {
+        // Mỗi khi bấm nút sẽ thêm giá trị thẻ input vào trong listTask
+        let inputElement = document.querySelector("input");
+
+        listTask.push(inputElement.value);
+        inputElement.value = "";
+
+        // Với những giá trị nguyên thủy như string, number, boolean => Lưu trực tiếp
+        // Với những giá trị phức tạp như object, array => Chuyển thành chuỗi JSON(string có định dạng của array hay object)
+        localStorage.tasks = JSON.stringify(listTask);
+
+        showTask(listTask);
+      });
     </script>
   </body>
 </html>
